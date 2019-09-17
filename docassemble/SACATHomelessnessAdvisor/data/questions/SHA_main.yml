@@ -3,8 +3,8 @@
 # as well as other data that defines your application
 ---
 # Include other parts of this interview as a list of files in this block
-include:
-  - SHA_file1_etc.yml
+#include:
+#  - SHA_file1_etc.yml
 ---
 # If we use objects we will declare them here.  Every application has
 # an 'endpoint' object.  You may use other objects depending on your
@@ -26,23 +26,20 @@ metadata:
 mandatory: True
 question: Welcome Screen Title
 subquestion: |
-  Welcome Screen text
-  
-  ***Disclaimer:***  
-  
-  *Don't forget to add a disclaimer here*
-  
-  Would you like to continue?
-buttons:
-  - "Continue": continue
-  - "Exit": exit
----
-#
-# Mandatory code block that drives the interview
+  ---
 mandatory: True
-code: |
-  if some_tests:
-    endpoint['ineligible']
-  else:
-    endpoint['eligible']
+question: Welcome!
+subquestion: |
+  Welcome to our Homelessness Advisory Application. It is designed to assist in finding services which may be of assistance if you find yourself likely to be homeless. 
+ 
+
+  ***Disclaimer:***   
+  No guarantees are made that any individual service may accept your enquiry or provide services to you. It is a guide to selected services only and may not include all services provided.
+
+
+  If you continue you accept these terms.
+buttons:
+  - "I accept and want to continue": continue
+  
+  - "I do not accept": exit
 ---
