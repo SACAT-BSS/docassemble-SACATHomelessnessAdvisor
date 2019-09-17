@@ -1,0 +1,60 @@
+variable name: HAA_agencylist
+use objects: true
+data: 
+  AG001:
+    service: Adolescent Community Brokerage
+    service_provider: Uniting Communities
+    address: ""
+    email: acbrokerage@unitingcommunities.org
+    phone: 8202 5060
+    website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/adolescent-community-care-options
+    min_age: 16
+    max_age: 21
+  AG002:
+    service: Aged Homelessness Assistance Program - Preferred support provider
+    service_provider: South Australian Housing Authority (Homelessness Strategy, Housing SA)
+    address: 120 Flinders Street Adelaide SA 5000
+    email: DLDCSIAgedHomelessnessAssistanceProgramReferrals@sa.gov.au
+    phone: 131 299
+    website: https://www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/aged-homelessness-assistance-program-preferred-support-provider
+    min_age: 50
+    max_age: 999
+  AG003:
+    service: Catherine House
+    service_provider: Catherine House Inc.
+    address: PO Box 6031 Halifax Street Adelaide SA 5000
+    email: reception@catherinehouse.org.au
+    phone: 8232 2282
+    website: https://www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/catherine-house
+    min_age: 18
+    max_age: 999
+  AG004:
+    service: Ceduna Generic Homelessness Service
+    service_provider: Centacare Catholic Family Services - Diocese of Port Pirie
+    address: 11 McKenzie Street Ceduna SA 5690
+    email: generaladmin@centacarecdpp.org.au
+    phone: 8625 3810
+    website: https://www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/ceduna-generic-homelessness-service
+    min_age: 10
+    max_age: 999
+  AG005:
+    service: Centacare Findon Family Housing
+    service_provider: Centacare Findon Family Housing
+    address: PO Box 284 Kilburn SA 5084
+    email: Findon@centacare.org.au
+    phone: 0438 870 049
+    website: https://www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/centacare-findon-family-housin
+    min_age: 10
+    max_age: 25
+  AG006:
+    service: Common Ground
+    service_provider: Common Ground
+    address: 192 Waymouth Street Adelaide SA 5000
+    email: infosa@hcau.org.au
+    phone: 1300 312 447
+    website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/common-ground
+    min_age: 18
+    max_age: 999
+    
+    
+    
