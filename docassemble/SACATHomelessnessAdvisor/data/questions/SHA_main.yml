@@ -3,8 +3,8 @@
 # as well as other data that defines your application
 ---
 # Include other parts of this interview as a list of files in this block
-#include:
-#  - SHA_file1_etc.yml
+include:
+  - SHA_questions.yml
 ---
 # If we use objects we will declare them here.  Every application has
 # an 'endpoint' object.  You may use other objects depending on your
@@ -14,19 +14,15 @@ objects:
 ---
 # Metadata about the app.  This isn't displayed anywhere but is useful
 # as a record.
-metadata:
-  title: Enter app title here
-  authors:
-    - name: Name 1
-    - name: Name 2
-    - name: Name 3
-  organisation:  Flinders University
+#metadata:
+#  title: Enter app title here
+#  authors:
+#   - name: Name 1
+#    - name: Name 2
+#    - name: Name 3
+#  organisation:  Flinders University
 ---
 # Welcome screen should go here
-mandatory: True
-question: Welcome Screen Title
-subquestion: |
-  ---
 mandatory: True
 question: Welcome!
 subquestion: |
@@ -42,4 +38,19 @@ buttons:
   - "I accept and want to continue": continue
   
   - "I do not accept": exit
+---
+mandatory: true
+question: Final Report
+subquestion:  |
+  Make this a list:
+  
+  - Gender: ${ HAAgender }
+  - Age: ${ HAAage }
+  - Abor ${ HAAabor} 
+  - Chnpeg ${ HAAchnpreg }
+
+buttons:
+  - Exit: exit
+  - Restart: restart
+  
 ---
