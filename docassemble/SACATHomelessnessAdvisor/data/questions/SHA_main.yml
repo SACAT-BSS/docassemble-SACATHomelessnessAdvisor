@@ -15,11 +15,11 @@ objects:
 # Metadata about the app.  This isn't displayed anywhere but is useful
 # as a record.
 #metadata:
-#  title: Enter app title here
+#  title: Homelessness Assistance Application
 #  authors:
-#   - name: Name 1
-#    - name: Name 2
-#    - name: Name 3
+#   - name: Julianne Keefe
+#    - name: Thomas Press
+#    - name: Nicholas Siemelink
 #  organisation:  Flinders University
 ---
 # Welcome screen should go here
@@ -48,6 +48,7 @@ subquestion:  |
   - Age: ${ HAAage }
   - Abor ${ HAAabor} 
   - Chnpeg ${ HAAchnpreg }
+  - Pet: ${ HAApets}
 
 buttons:
   - Exit: exit

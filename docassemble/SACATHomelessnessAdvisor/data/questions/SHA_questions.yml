@@ -26,3 +26,7 @@ fields:
   Age: HAAage
   datatype: interger
 ---
+question: |
+  Do you have pets?
+yesno: HAApets
+---
