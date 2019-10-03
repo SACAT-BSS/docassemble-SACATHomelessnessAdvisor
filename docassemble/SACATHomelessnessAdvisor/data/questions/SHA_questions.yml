@@ -1,0 +1,32 @@
+---
+question: |
+  What is your gender?
+fields: 
+  - no label: HAAgender
+    datatype: radio
+    choices:
+     - Female
+     - Male
+---
+question: |
+  % if HAAgender == 'Male':
+  Do you have children?
+  % else:
+  Do you have children or are you pregnant?
+  % endif
+yesno: HAAchnpreg
+---
+question: |
+  Are you Aboriginal?
+yesno: HAAabor
+---
+question: |
+  What is your age?
+fields:
+  Age: HAAage
+  datatype: interger
+---
+question: |
+  Do you have pets?
+yesno: HAApets
+---
