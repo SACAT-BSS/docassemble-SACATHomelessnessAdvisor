@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 from fnmatch import fnmatchcase
 from distutils.util import convert_path
 
-standard_exclude = ('*.py', '*.pyc', '*~', '.*', '*.bak', '*.swp*')
+standard_exclude = ('*.pyc', '*~', '.*', '*.bak', '*.swp*')
 standard_exclude_directories = ('.*', 'CVS', '_darcs', './build', './dist', 'EGG-INFO', '*.egg-info')
 def find_package_data(where='.', package='', exclude=standard_exclude, exclude_directories=standard_exclude_directories):
     out = {}
@@ -45,7 +45,7 @@ def find_package_data(where='.', package='', exclude=standard_exclude, exclude_d
 setup(name='docassemble.SACATHomelessnessAdvisor',
       version='0.0.1',
       description=('TBC'),
-      long_description='# docassemble.SACATHomelessnessAdvisor\n\nTBC\n\n## Author\n\nMark Ferraretto, mark.ferraretto@flinders.edu.au\n\n',
+      long_description='# docassemble.SACATHomelessnessAdvisor\r\n\r\nTBC\r\n\r\n## Author\r\n\r\nMark Ferraretto, mark.ferraretto@flinders.edu.au\r\n\r\n',
       long_description_content_type='text/markdown',
       author='TBC',
       author_email='TBC',
