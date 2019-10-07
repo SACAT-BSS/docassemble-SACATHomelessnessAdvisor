@@ -1,0 +1,110 @@
+# This is the main file for your application.
+# This file should contain the mandatory blocks
+# as well as other data that defines your application
+---
+# Include other parts of this interview as a list of files in this block
+include:
+  - SHA_questions.yml
+  - SHA_agency_table.yml
+  - SHA_QualifyingAgencies.yml
+---
+# If we use objects we will declare them here.  Every application has
+# an 'endpoint' object.  You may use other objects depending on your
+# application's needs
+objects:
+  - endpoint: DADict
+  - HAAqualifyingagencies: DAList
+---
+code: |
+mandatory: True
+
+ for HAA_agency in HAA_agencylist.keys():
+ if HAA_agencylist[HAA_agency]['condition'] == True
+HAAqualifyingagencies.append(HAA_agencylist)
+  
+
+---
+question: |
+  Introduction to Markdown
+subquestion: |
+  Markdown allows you to express
+  formatting in plain text.
+  
+  # I am a heading
+
+  Write in *italic text* or even
+  **bold text**.
+
+  ## I am a subheading
+
+  ### I am a smaller subheading
+
+  To block quote,
+
+  > you can do this.
+
+  Insert an image:
+
+  ![Markdown logo](https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/208px-Markdown-mark.svg.png)
+
+  Here is a bullet list:
+
+  * Larry;
+  * Curly; and
+  * Moe
+
+  Here is a numbered list:
+
+  1. Buy groceries.
+  2. Get the car inspected.
+  3. Take over the world!
+  
+  You can [Google](http://google.com)
+  "markdown" to learn more.
+mandatory: True
+---
+# Metadata about the app.  This isn't displayed anywhere but is useful
+# as a record.
+#metadata:
+#  title: Homelessness Assistance Application
+#  authors:
+#   - name: Julianne Keefe
+#    - name: Thomas Press
+#    - name: Nicholas Siemelink
+#  organisation:  Flinders University
+---
+# Welcome screen should go here
+mandatory: True
+question: Welcome!
+subquestion: |
+  Welcome to our Homelessness Advisory Application. It is designed to assist in finding services which may be of assistance if you find yourself likely to be homeless. 
+ 
+
+  ***Disclaimer:***   
+  No guarantees are made that any individual service may accept your enquiry or provide services to you. It is a guide to selected services only and may not include all services provided.
+
+
+  If you continue you accept these terms.
+buttons:
+  - "I accept and want to continue": continue
+  
+  - "I do not accept": exit
+---
+mandatory: true
+question: Final Report
+subquestion:  |
+  Make this a list:
+  
+  - Gender: ${ HAAgender }
+  - Age: ${ HAAage }
+  - Abor ${ HAAabor} 
+  - Chnpreg ${ HAAchnpreg }
+  - Pet: ${ HAApets}
+
+  ${ HAAqualifyingagencies }
+      
+buttons:
+  - Exit: exit
+  - Restart: restart
+  
+---
