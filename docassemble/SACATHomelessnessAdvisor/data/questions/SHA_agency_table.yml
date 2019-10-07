@@ -11,7 +11,6 @@ data:
     website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/adolescent-community-care-options
     min_age: 16
     max_age: 21
-    condition: True
   AG002:
     service: Aged Homelessness Assistance Program - Preferred support provider
     service_provider: South Australian Housing Authority (Homelessness Strategy, Housing SA)
@@ -30,14 +29,13 @@ data:
     website: https://www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/catherine-house
     min_age: 18
     max_age: 999
-    gender:
+    gender: 
       male: True
       female: True
     indigenous: False
     families:
       singles: True
       family: True
-    condition: True
   AG004:
     service: Ceduna Generic Homelessness Service
     service_provider: Centacare Catholic Family Services - Diocese of Port Pirie
@@ -47,6 +45,13 @@ data:
     website: https://www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/ceduna-generic-homelessness-service
     min_age: 10
     max_age: 999
+    gender:
+      male: True
+      female: True
+    indigenous: True
+    families:
+      singles: True
+      family: False
   AG005:
     service: Centacare Findon Family Housing
     service_provider: Centacare Findon Family Housing

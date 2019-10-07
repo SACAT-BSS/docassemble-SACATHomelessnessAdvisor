@@ -5,8 +5,8 @@ fields:
   - no label: HAAgender
     datatype: radio
     choices:
-     - Female
-     - Male
+     - female
+     - male
 ---
 question: |
   % if HAAgender == 'Male':

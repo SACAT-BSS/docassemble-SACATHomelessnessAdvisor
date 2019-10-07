@@ -14,27 +14,6 @@ objects:
   - endpoint: DADict
   - HAAqualifyingagencies: DAList
 ---
-code: |
-  HAAqualifyingagencies.there_are_any = True
----
-mandatory: True
-code: |
-  for HAAagency in HAA_agencylist.keys():
-    if HAA_agencylist[HAAagency].item('condition'):
-      HAAqualifyingagencies.append(HAAagency)
-  
-  HAAqualifyingagencies.gathered = True
----
-# Metadata about the app.  This isn't displayed anywhere but is useful
-# as a record.
-#metadata:
-#  title: Homelessness Assistance Application
-#  authors:
-#   - name: Julianne Keefe
-#    - name: Thomas Press
-#    - name: Nicholas Siemelink
-#  organisation:  Flinders University
----
 # Welcome screen should go here
 mandatory: True
 question: Welcome!
@@ -51,6 +30,31 @@ buttons:
   - "I accept and want to continue": continue
   
   - "I do not accept": exit
+---
+code: |
+  HAAqualifyingagencies.there_are_any = True
+---
+mandatory: True
+code: |
+  for HAAagency in HAA_agencylist.keys():
+    if (HAA_agencylist[HAAagency].item('min_age') <= HAAage <= HAA_agencylist[HAAagency].item('max_age') and
+    HAA_agencylist[HAAagency].item('gender').item(HAAgender) and
+    (HAAabor == True or (HAAabor == False and HAA_agencylist[HAAagency].item('indigenous') == False)) and
+    ((HAA_agencylist[HAAagency].item('families').item('singles') == True and HAAchnpreg == False) or (HAA_agencylist[HAAagency].item('families').item('family') == True and HAAchnpreg == True ))):
+        HAAqualifyingagencies.append(HAAagency)
+  
+  HAAqualifyingagencies.gathered = True
+---
+# Metadata about the app.  This isn't displayed anywhere but is useful
+# as a record.
+#metadata:
+#  title: Homelessness Assistance Application
+#  authors:
+#   - name: Julianne Keefe
+#    - name: Thomas Press
+#    - name: Nicholas Siemelink
+#  organisation:  Flinders University
+
 ---
 mandatory: true
 question: Final Report
