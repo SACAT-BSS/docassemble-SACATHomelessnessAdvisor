@@ -15,10 +15,15 @@ objects:
   - HAAqualifyingagencies: DAList
 ---
 code: |
-for HAA_agency in HAA_agencylist.keys():
-  if HAA_agencylist[HAA_agency]['condition'] == True:
-   HAAqualifyingagencies.append(HAA_agency)
+  HAAqualifyingagencies.there_are_any = True
+---
+mandatory: True
+code: |
+  for HAAagency in HAA_agencylist.keys():
+    if HAA_agencylist[HAAagency].item('condition'):
+      HAAqualifyingagencies.append(HAAagency)
   
+  HAAqualifyingagencies.gathered = True
 ---
 # Metadata about the app.  This isn't displayed anywhere but is useful
 # as a record.
@@ -50,16 +55,17 @@ buttons:
 mandatory: true
 question: Final Report
 subquestion:  |
-  Make this a list:
   
-  - Gender: ${ HAAgender }
-  - Age: ${ HAAage }
-  - Abor ${ HAAabor} 
-  - Chnpreg ${ HAAchnpreg }
-  - Pet: ${ HAApets}
+  ### Qualifying Agencies
+  % for HAAelement in HAAqualifyingagencies:
+  - ${ HAAelement }
+  % endfor
+  
+  ### All agencies
+  % for HAAagency in HAA_agencylist.keys():
+  - ${ HAAagency }
+  % endfor
 
-  ${ HAAqualifyingagencies }
-      
 buttons:
   - Exit: exit
   - Restart: restart
