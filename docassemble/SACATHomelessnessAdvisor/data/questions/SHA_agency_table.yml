@@ -1,3 +1,4 @@
+---
 variable name: HAA_agencylist
 use objects: true
 data: 
@@ -36,6 +37,7 @@ data:
     families:
       singles: True
       family: True
+    condition: True
   AG004:
     service: Ceduna Generic Homelessness Service
     service_provider: Centacare Catholic Family Services - Diocese of Port Pirie
@@ -477,4 +479,4 @@ data:
     website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/youth-justice-program
     min_age: 10
     max_age: 16
-     
+---
