@@ -24,5 +24,9 @@ question: |
   What is your age?
 fields:
   Age: HAAage
-  datatype: interger
+  datatype: integer
+---
+question: |
+  Do you have pets?
+yesno: HAApets
 ---
