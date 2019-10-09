@@ -59,15 +59,47 @@ code: |
 mandatory: true
 question: Final Report
 subquestion:  |
+
+
+  % if HAApets:
+  ### Here is a suggested pet adoption agency
+  % endif
   
-  ### Qualifying Agencies
-  % for HAAelement in HAAqualifyingagencies:
-  - ${ HAAelement }
-  % endfor
+  % if HAAabor:
+  ### Agencies servicing only Aboriginal people
+    % for HAAagency in HAAqualifyingagencies:
+      % if HAA_agencylist[HAAagency].item('indigenous') == True:
+        ${ HAAagency }
+      % endif
+    % endfor
+  % endif
   
-  ### All agencies
-  % for HAAagency in HAA_agencylist.keys():
-  - ${ HAAagency }
+  
+  % if HAAchnpreg:
+  ### Agencies servicing only families
+    % for HAAagency in HAAqualifyingagencies:
+      % if (HAA_agencylist[HAAagency].item('families').item('singles') == False and HAA_agencylist[HAAagency].item('indigenous') == False):
+          ${ HAAagency }
+      % endif
+    % endfor
+  % endif
+  
+  
+  % if HAAchnpreg == False:
+  ### Agencies servicing only singles
+    % for HAAagency in HAAqualifyingagencies:
+      % if (HAA_agencylist[HAAagency].item('families').item('family') == False and HAA_agencylist[HAAagency].item('indigenous') == False): 
+          ${ HAAagency }
+      % endif
+    % endfor
+  % endif
+  
+  
+  ### All other Qualifying Agencies
+  % for HAAagency in HAAqualifyingagencies:
+    % if (HAA_agencylist[HAAagency].item('families').item('singles') == True and HAA_agencylist[HAAagency].item('families').item('family') == True and HAA_agencylist[HAAagency].item('indigenous') == False):
+        ${ HAAagency }
+    % endif
   % endfor
 
 buttons:

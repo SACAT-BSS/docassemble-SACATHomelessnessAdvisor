@@ -9,6 +9,10 @@ fields:
      - male
 ---
 question: |
+  Do you have pets?
+yesno: HAApets
+---
+question: |
   % if HAAgender == 'Male':
   Do you have children?
   % else:

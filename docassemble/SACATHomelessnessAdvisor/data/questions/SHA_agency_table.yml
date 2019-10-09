@@ -5,12 +5,20 @@ data:
   AG001:
     service: Adolescent Community Brokerage
     service_provider: Uniting Communities
-    address: 123 fake st
+    address: ""
     email: acbrokerage@unitingcommunities.org
     phone: 8202 5060
     website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/adolescent-community-care-options
     min_age: 16
     max_age: 21
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: false
+    printed: false
   AG002:
     service: Aged Homelessness Assistance Program - Preferred support provider
     service_provider: South Australian Housing Authority (Homelessness Strategy, Housing SA)
@@ -18,8 +26,16 @@ data:
     email: DLDCSIAgedHomelessnessAssistanceProgramReferrals@sa.gov.au
     phone: 131 299
     website: https://www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/aged-homelessness-assistance-program-preferred-support-provider
+    printed: false
     min_age: 50
     max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: false
   AG003:
     service: Catherine House
     service_provider: Catherine House Inc.
@@ -27,15 +43,16 @@ data:
     email: reception@catherinehouse.org.au
     phone: 8232 2282
     website: https://www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/catherine-house
+    printed: false
     min_age: 18
     max_age: 999
     gender: 
-      male: True
-      female: True
-    indigenous: False
+      male: false
+      female: true
+    indigenous: false
     families:
-      singles: True
-      family: True
+      singles: true
+      family: false
   AG004:
     service: Ceduna Generic Homelessness Service
     service_provider: Centacare Catholic Family Services - Diocese of Port Pirie
@@ -43,15 +60,16 @@ data:
     email: generaladmin@centacarecdpp.org.au
     phone: 8625 3810
     website: https://www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/ceduna-generic-homelessness-service
+    printed: false
     min_age: 10
     max_age: 999
-    gender:
-      male: True
-      female: True
-    indigenous: True
+    gender: 
+      male: true
+      female: true
+    indigenous: false
     families:
-      singles: True
-      family: False
+      singles: true
+      family: true
   AG005:
     service: Centacare Findon Family Housing
     service_provider: Centacare Findon Family Housing
@@ -59,8 +77,16 @@ data:
     email: Findon@centacare.org.au
     phone: 0438 870 049
     website: https://www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/centacare-findon-family-housin
+    printed: false
     min_age: 10
     max_age: 25
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
   AG006:
     service: Common Ground
     service_provider: Common Ground
@@ -68,8 +94,16 @@ data:
     email: infosa@hcau.org.au
     phone: 1300 312 447
     website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/common-ground
+    printed: false
     min_age: 18
     max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: false
   AG007:
     service: Community Transition Worker - Westcare
     service_provider: Baptist Care SA 
@@ -77,8 +111,16 @@ data:
     email: enquiries@baptisitcare.org.au
     phone: 8118 5200
     website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/community-transition-worker-baptist-care
+    printed: false
     min_age: 10
     max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
   AG008:
     service: Coober Pedy Homelessness and Support Service
     service_provider: Uniting Country SA
@@ -86,8 +128,16 @@ data:
     email: katrina.almond@ucsa.org.au
     phone: 1300 067 777
     website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/coober-pedy-homelessness-and-support-service
+    printed: false
     min_age: 10
     max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
   AG009:
     service: Eastern Adelaide Aboriginal Specific Homelessness Service
     service_provider: Baptist Care Inc and Aboriginal Sobriety Group
@@ -95,8 +145,16 @@ data:
     email: enquiries@baptisitcare.org.au
     phone: 8118 5200
     website: https://www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/eastern-adelaide-aboriginal-specific-homelessness-service
+    printed: false
     min_age: 10
     max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: true
+    families:
+      singles: true
+      family: true
   AG010:
     service: Eastern Adelaide Generic Homelessness Service
     service_provider: Hutt Street Centre in partnership with Red Cross
@@ -104,8 +162,16 @@ data:
     email: dchutt@huttstcentre.org.au
     phone: 8418 2500
     website: https://www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/eastern-adelaide-generic-homelessness-service
+    printed: false
     min_age: 10
     max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: false
   AG011: 
     service: Ex Custodial Homelessness Support Services and Integrated Housing Exits Program
     service_provider: ""
@@ -113,8 +179,16 @@ data:
     email: oars@communitytransitions.com.au
     phone: 8218 0700
     website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/ex-custodial-homelessness-support-services-and-integrated-housing-exits-program
+    printed: false
     min_age: 10
     max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: false
   AG012: 
     service: Fleurieu and Kangaroo Island Homelessness Support Service
     service_provider: Junction Australia
@@ -122,8 +196,16 @@ data:
     email: admin@junctionaustralia.org.au
     phone: 8392 3060
     website: www.junctionaustralia.org.au
+    printed: false
     min_age: 15
     max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
   AG013:
     service: Fleurieu and Kangaroo Island Homelessness Support Service
     service_provider: Junction Australia
@@ -131,8 +213,16 @@ data:
     email: admin@junctionaustralia.org.au
     phone: 8553 2809
     website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/fleurieu-and-kangaroo-island-homelessness-support-service
+    printed: false
     min_age: 15
     max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
   AG014:
     service: Inner North and North East Youth Homelessness Service
     service_provider: The Salvation Army Ingle Farm
@@ -140,8 +230,16 @@ data:
     email: corpsofficer.inglefarm@aus.salvationarmy.org
     phone: 8397 9333
     website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/inner-north-and-north-east-youth-homelessness-service
+    printed: false
     min_age: 15
     max_age: 25
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
   AG015: 
     service: Inner North Homelessness Service
     service_provider: Anglicare SA
@@ -149,8 +247,16 @@ data:
     email: hiin@anglicaresa.com.au
     phone: 8118 2660
     website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/inner-north-homelessness-service
+    printed: false
     min_age: 10
     max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
   AG016:
     service: Inner Southern Homelessness Service
     service_provider: UnitingCare Wesley Bowden Inc
@@ -158,8 +264,16 @@ data:
     email: ucwb@ucwb.org.au
     phone: 8296 6455
     website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/inner-southern-homelessness-service
+    printed: false
     min_age: 10
     max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
   AG017: 
     service: Inner Southern Youth Homelessness Service
     service_provider: Baptist Care (SA) Inc
@@ -167,8 +281,16 @@ data:
     email: enquiries@baptisitcare.org.au
     phone: 8177 4900
     website: https://www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/inner-southern-youth-homelessness-service
+    printed: false
     min_age: 15
     max_age: 25
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: false
   AG018:
     service: Kurlana Tampawardli housing support
     service_provider: ""
@@ -176,8 +298,16 @@ data:
     email: acc@unitingcommunities.org
     phone: 8202 5610
     website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/Kurlana-Tampawardli
+    printed: false
     min_age: 10
     max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: true
+    families:
+      singles: true
+      family: false
   AG019: 
     service: Ladder St Vincent Street
     service_provider: St Johns youth service
@@ -185,8 +315,16 @@ data:
     email: FoyerReferrals@sjys.com.au
     phone: 8447 1090
     website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/ladder-st-vincent-street
+    printed: false
     min_age: 16
     max_age: 21
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
   AG020: 
     service: Lakeview Transitional Accommodation Centre - Port Augusta
     service_provider: Housing SA
@@ -194,8 +332,16 @@ data:
     email: housingcustomers@sa.gov.au
     phone: 8641 2944
     website: https://www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/lakeview-transitional-accommodation-centre-port-augusta
+    printed: false
     min_age: 10
     max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: true
+    families:
+      singles: true
+      family: true
   AG021: 
     service: Limestone Coast Generic Homelessness Service
     service_provider: Anglican Community Care Inc
@@ -203,8 +349,16 @@ data:
     email: care@accare.org.au
     phone: 8723 0540
     website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/limestone-coast-generic-homelessness-service
+    printed: false
     min_age: 10
     max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
   AG022:
     service: Murray Bridge Adelaide Hills Generic Homelessness Service
     service_provider: Anglican Community Care Inc
@@ -212,8 +366,16 @@ data:
     email: care@accare.org.au
     phone: 8532 6303
     website: https://www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/murray-bridge-adelaide-hills-generic-homelessness-service
+    printed: false
     min_age: 10
     max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
   AG023: 
     service: Outer North Generic Homelessness Service
     service_provider: Anglicare SA
@@ -221,8 +383,16 @@ data:
     email: hion@anglicaresa.com.au
     phone: 8209 5460
     website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/outer-north-generic-homelessness-service
+    printed: false
     min_age: 10
     max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
   AG024:
     service: Outer North Youth Homelessness Service
     service_provider: Centacare Catholic Family Services
@@ -230,8 +400,16 @@ data:
     email: elizabeth@centacare.org.au
     phone: 8252 2311
     website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/outer-north-youth-homelessness-service
+    printed: false
     min_age: 15
     max_age: 24
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: false
   AG025: 
     service: Outer North Youth Homelessness Service
     service_provider: Centacare Catholic Family Services
@@ -239,17 +417,33 @@ data:
     email: nuriootpa@centacare.org.au
     phone: 8303 6625
     website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/outer-north-youth-homelessness-service
+    printed: false
     min_age: 15
     max_age: 24
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: false
   AG026:
     service: Outer Southern Homelessness Service
     service_provider: Lutheran Community Care
-    address: 123 fake street
+    address: ""
     email: morphettvale@lccare.org.au
     phone: 8326 4688
     website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/outer-southern-homelessness-service
+    printed: false
     min_age: 10
     max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: false
   AG027: 
     service: Outer Southern Youth Homelessness Service
     service_provider: Junction Australia
@@ -257,8 +451,16 @@ data:
     email: admin@junctionaustralia.org.au
     phone: 8392 3000
     website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/outer-southern-youth-homelessness-service
+    printed: false
     min_age: 15
     max_age: 25
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
   AG028:
     service: Port Augusta Generic Homelessness Service
     service_provider: The Salvation Army (SA) Property Trust
@@ -266,8 +468,16 @@ data:
     email: paghs@aus.salvationarmy.org
     phone: 8641 1021
     website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/port-augusta-homelessness-service
+    printed: false
     min_age: 10
     max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
   AG029: 
     service: Port Augusta Youth Homelessness Service
     service_provider: UnitingCare Wesley Country SA
@@ -275,8 +485,16 @@ data:
     email: unitingcountry@ucsa.org.au
     phone: 7628 3100
     website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/port-augusta-youth-homelessness-service
+    printed: false
     min_age: 15
     max_age: 25
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: false
   AG030:
     service: Port Lincoln Homelessness Service
     service_provider: West Coast Youth and Community Support Inc
@@ -284,8 +502,16 @@ data:
     email: ptlincolnadmin@centacarecdpp.org.au
     phone: 8683 0733
     website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/port-lincoln-homelessness-service
+    printed: false
     min_age: 10
     max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
   AG031: 
     service: Riverland Homelessness Assertive Outreach Program
     service_provider: Life Without Barriers
@@ -293,8 +519,16 @@ data:
     email: info@lwb.org.au
     phone: 8580 5500
     website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/riverland-homelessness-assertive-outreach-program
+    printed: false
     min_age: 10
     max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
   AG032:
     service: Southern Country Homelessness Service & Riverland Generic Homelessness
     service_provider: Limestone Coast
@@ -302,8 +536,16 @@ data:
     email: care@accare.org.au
     phone: 8724 9211
     website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/southern-country-homelessness-service-and-riverland-generic-homelessness
+    printed: false
     min_age: 10
     max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
   AG033: 
     service: Southern Country Homelessness Service & Riverland Generic Homelessness
     service_provider: Murray Bridge
@@ -311,8 +553,16 @@ data:
     email: care@accare.org.au
     phone: 8532 6303
     website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/southern-country-homelessness-service-and-riverland-generic-homelessness
+    printed: false
     min_age: 10
     max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
   AG034:
     service: Southern Country Homelessness Service & Riverland Generic Homelessness
     service_provider: Riverland
@@ -320,8 +570,16 @@ data:
     email: care@accare.org.au
     phone: 8582 2344
     website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/southern-country-homelessness-service-and-riverland-generic-homelessness
+    printed: false
     min_age: 10
     max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
   AG035: 
     service: St Johns Youth Service
     service_provider: St Johns Youth Service
@@ -329,17 +587,33 @@ data:
     email: stjohns@stjohnsyouthservices.org.au
     phone: 8359 2989
     website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/st-johns-youth-service
+    printed: false
     min_age: 16
     max_age: 21
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
   AG036:
     service: St Vincent de Paul Homeless Men Crisis Accommodation Service
     service_provider: St Vincent de Paul Society (SA) Inc
     address: 28 Whitmore Square Adelaide SA 5000
-    email: 123 fake st
+    email: ""
     phone: 8231 2250
     website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/st-vincent-de-paul-homeless-men-crisis-accommodation-service
+    printed: false
     min_age: 18
     max_age: 999
+    gender: 
+      male: true
+      female: false
+    indigenous: false
+    families:
+      singles: true
+      family: false
   AG037: 
     service: Towards Independence
     service_provider: Salvation Army Towards Independence
@@ -347,26 +621,50 @@ data:
     email: Intake and information interviews are held on weekdays between 11.00 am to 1.00 pm (no booking required).
     phone: ""
     website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/towards-independence
+    printed: false
     min_age: 10
     max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: false
   AG038: 
     service: Wangka Wilurrara transitional accommodation centre - Ceduna
     service_provider: Housing SA
     address: 21 Goode Road Ceduna SA 5690
-    email: 123 fa
+    email: ""
     phone: 8625 3522
     website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/wangka-wilurrara-transitional-accommodation-centre
+    printed: false
     min_age: 10
     max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: true
+    families:
+      singles: true
+      family: true
   AG039: 
     service: Western Aboriginal Homelessness Service
     service_provider: Aboriginal Sobriety Group Inc
-    address: 123
+    address: ""
     email: waahs@asg.org.au
     phone: 8243 1698
     website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/western-aboriginal-homelessness-service
+    printed: false
     min_age: 10
     max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: true
+    families:
+      singles: true
+      family: true
   AG040:
     service: Western Adelaide Homelessness Service
     service_provider: UnitingSA
@@ -374,8 +672,16 @@ data:
     email: unitingsa@unitingsa.com.au
     phone: 8440 2110
     website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/western-adelaide-homelessness-service
+    printed: false
     min_age: 10
     max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
   AG041: 
     service: Western Adelaide Youth Homelessness Service
     service_provider: UnitingSA
@@ -383,8 +689,16 @@ data:
     email: unitingsa@unitingsa.com.au
     phone: 8440 2110
     website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/western-adelaide-youth-homelessness-service
+    printed: false
     min_age: 15
     max_age: 25
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: false
   AG042:
     service: Whyalla Generic Homelessness Service (Youth Focus)
     service_provider: Centacare
@@ -392,8 +706,16 @@ data:
     email: whreferrals@centacare.org.au
     phone: 8645 3655
     website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/whyalla-generic-homelessness-service-youth-focus
+    printed: false
     min_age: 15
     max_age: 25
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
   AG043: 
     service: Yorke and Mid North Homelessness Service
     service_provider: UnitingCare Wesley Country SA
@@ -401,8 +723,16 @@ data:
     email: unitingcountry@ucsa.org.au
     phone: 8633 8600 / 0428 326 540
     website: https://www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/yorke-and-mid-north-homelessness-service
+    printed: false
     min_age: 10
     max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
   AG044:
     service: Yorke and Mid North Homelessness Service
     service_provider: UnitingCare Wesley Country SA
@@ -410,8 +740,16 @@ data:
     email: unitingcountry@ucsa.org.au
     phone: 8842 4033 / 0428 326 530
     website: https://www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/yorke-and-mid-north-homelessness-service
+    printed: false
     min_age: 10
     max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
   AG045: 
     service: Yorke and Mid North Homelessness Service
     service_provider: UnitingCare Wesley Country SA
@@ -419,8 +757,16 @@ data:
     email: unitingcountry@ucsa.org.au
     phone: 8821 2566 / 0428 326 527
     website: https://www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/yorke-and-mid-north-homelessness-service
+    printed: false
     min_age: 10
     max_age: 999
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
   AG046:
     service: Young Family Support Program
     service_provider: Louise Place 
@@ -428,8 +774,16 @@ data:
     email: louiseplace@centacare.org.au
     phone: 8272 6811
     website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/young-family-support-program
+    printed: false
     min_age: 10
     max_age: 18
+    gender: 
+      male: false
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
   AG047: 
     service: Young Family Support Program
     service_provider: Malvern Place
@@ -437,8 +791,16 @@ data:
     email: malvern@centacare.org.au
     phone: 8359 1022
     website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/young-family-support-program
+    printed: false
     min_age: 10
     max_age: 25
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
   AG048:
     service: Young Family Support Program
     service_provider: Coolock House
@@ -446,8 +808,16 @@ data:
     email: coolock@centacare.org.au
     phone: 8382 6699
     website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/young-family-support-program
+    printed: false
     min_age: 10
     max_age: 25
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: true
   AG049: 
     service: Youth Accommodation Aboriginal Specific Homelessness Services
     service_provider: Aboriginal Family Support Services
@@ -455,17 +825,33 @@ data:
     email: afss@afss.com.au
     phone: 8205 1500
     website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/youth-accommodation-aboriginal-specific-homelessness-services
+    printed: false
     min_age: 15
     max_age: 25
+    gender: 
+      male: true
+      female: true
+    indigenous: true
+    families:
+      singles: true
+      family: false
   AG050:
     service: Youth Accommodation Aboriginal Specific Homelessness Services
     service_provider: Aboriginal Family Support Services
-    address: 123
+    address: ""
     email: afss@afss.com.au
     phone: 8205 1500
     website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/youth-accommodation-aboriginal-specific-homelessness-services
+    printed: false
     min_age: 15
     max_age: 25
+    gender: 
+      male: true
+      female: true
+    indigenous: true
+    families:
+      singles: true
+      family: false
   AG051: 
     service: Youth Gateway
     service_provider: Service to Youth Council
@@ -473,15 +859,31 @@ data:
     email: hypaadmin@syc.net.au
     phone: 1300 306 046
     website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/youth-gateway
+    printed: false
     min_age: 15
     max_age: 25
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: false
   AG052:
     service: Youth Justice Program
     service_provider: Service to Youth Council Inc
     address: 135 - 139 Currie Street Adelaide SA 5000
-    email: 123@
+    email: ""
     phone: 8405 8540
     website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/youth-justice-program
+    printed: false
     min_age: 10
     max_age: 16
+    gender: 
+      male: true
+      female: true
+    indigenous: false
+    families:
+      singles: true
+      family: false
 ---
