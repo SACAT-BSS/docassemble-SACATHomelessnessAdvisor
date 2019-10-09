@@ -5,12 +5,8 @@ fields:
   - no label: HAAgender
     datatype: radio
     choices:
-     - female
-     - male
----
-question: |
-  Do you have pets?
-yesno: HAApets
+     - Female
+     - Male
 ---
 question: |
   % if HAAgender == 'Male':

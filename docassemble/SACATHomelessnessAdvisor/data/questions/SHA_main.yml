@@ -5,22 +5,14 @@
 # Include other parts of this interview as a list of files in this block
 include:
   - SHA_questions.yml
+  - SHA_agency_table.yml
 ---
 # If we use objects we will declare them here.  Every application has
 # an 'endpoint' object.  You may use other objects depending on your
 # application's needs
 objects:
   - endpoint: DADict
----
-# Metadata about the app.  This isn't displayed anywhere but is useful
-# as a record.
-#metadata:
-#  title: Enter app title here
-#  authors:
-#   - name: Name 1
-#    - name: Name 2
-#    - name: Name 3
-#  organisation:  Flinders University
+  - HAAqualifyingagencies: DAList
 ---
 # Welcome screen should go here
 mandatory: True
@@ -39,15 +31,76 @@ buttons:
   
   - "I do not accept": exit
 ---
+code: |
+  HAAqualifyingagencies.there_are_any = True
+---
+mandatory: True
+code: |
+  for HAAagency in HAA_agencylist.keys():
+    if (HAA_agencylist[HAAagency].item('min_age') <= HAAage <= HAA_agencylist[HAAagency].item('max_age') and
+    HAA_agencylist[HAAagency].item('gender').item(HAAgender) and
+    (HAAabor == True or (HAAabor == False and HAA_agencylist[HAAagency].item('indigenous') == False)) and
+    ((HAA_agencylist[HAAagency].item('families').item('singles') == True and HAAchnpreg == False) or (HAA_agencylist[HAAagency].item('families').item('family') == True and HAAchnpreg == True ))):
+        HAAqualifyingagencies.append(HAAagency)
+  
+  HAAqualifyingagencies.gathered = True
+---
+# Metadata about the app.  This isn't displayed anywhere but is useful
+# as a record.
+#metadata:
+#  title: Homelessness Assistance Application
+#  authors:
+#   - name: Julianne Keefe
+#    - name: Thomas Press
+#    - name: Nicholas Siemelink
+#  organisation:  Flinders University
+
+---
 mandatory: true
 question: Final Report
 subquestion:  |
-  Make this a list:
+
+
+  % if HAApets:
+  ### Here is a suggested pet adoption agency
+  % endif
   
-  - Gender: ${ HAAgender }
-  - Age: ${ HAAage }
-  - Abor ${ HAAabor} 
-  - Chnpeg ${ HAAchnpreg }
+  % if HAAabor:
+  ### Agencies servicing only Aboriginal people
+    % for HAAagency in HAAqualifyingagencies:
+      % if HAA_agencylist[HAAagency].item('indigenous') == True:
+        ${ HAAagency }
+      % endif
+    % endfor
+  % endif
+  
+  
+  % if HAAchnpreg:
+  ### Agencies servicing only families
+    % for HAAagency in HAAqualifyingagencies:
+      % if (HAA_agencylist[HAAagency].item('families').item('singles') == False and HAA_agencylist[HAAagency].item('indigenous') == False):
+          ${ HAAagency }
+      % endif
+    % endfor
+  % endif
+  
+  
+  % if HAAchnpreg == False:
+  ### Agencies servicing only singles
+    % for HAAagency in HAAqualifyingagencies:
+      % if (HAA_agencylist[HAAagency].item('families').item('family') == False and HAA_agencylist[HAAagency].item('indigenous') == False): 
+          ${ HAAagency }
+      % endif
+    % endfor
+  % endif
+  
+  
+  ### All other Qualifying Agencies
+  % for HAAagency in HAAqualifyingagencies:
+    % if (HAA_agencylist[HAAagency].item('families').item('singles') == True and HAA_agencylist[HAAagency].item('families').item('family') == True and HAA_agencylist[HAAagency].item('indigenous') == False):
+        ${ HAAagency }
+    % endif
+  % endfor
 
 buttons:
   - Exit: exit
