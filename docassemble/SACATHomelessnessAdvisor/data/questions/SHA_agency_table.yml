@@ -18,7 +18,6 @@ data:
     families:
       singles: true
       family: false
-    printed: false
   AG002:
     service: Aged Homelessness Assistance Program - Preferred support provider
     service_provider: South Australian Housing Authority (Homelessness Strategy, Housing SA)
