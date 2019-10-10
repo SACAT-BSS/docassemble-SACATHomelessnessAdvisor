@@ -26,31 +26,32 @@ subquestion: |
 
 
   If you continue you accept these terms.
+field: HAAeligible
 buttons:
-  - "I accept and want to continue": continue
-  
-  - "I do not accept": exit
+  - "I Accept": True
+  - "I Do Not Accept": False
 ---
 code: |
   HAAqualifyingagencies.there_are_any = True
 ---
 mandatory: True
 code: |
-  for HAAagency in HAA_agencylist.keys():
-    if (HAA_agencylist[HAAagency].item('min_age') <= HAAage <= HAA_agencylist[HAAagency].item('max_age') and
-    HAA_agencylist[HAAagency].item('gender').item(HAAgender) and
-    (HAAabor == True or (HAAabor == False and HAA_agencylist[HAAagency].item('indigenous') == False)) and
-    ((HAA_agencylist[HAAagency].item('families').item('singles') == True and HAAchnpreg == False) or (HAA_agencylist[HAAagency].item('families').item('family') == True and HAAchnpreg == True ))):
-        HAAqualifyingagencies.append(HAAagency)
+  if HAAeligible == True:
+    for HAAagency in HAA_agencylist.keys():
+      if (HAA_agencylist[HAAagency].item('min_age') <= HAAage <= HAA_agencylist[HAAagency].item('max_age') and
+      HAA_agencylist[HAAagency].item('gender').item(HAAgender) and
+      (HAAabor == True or (HAAabor == False and HAA_agencylist[HAAagency].item('indigenous') == False)) and
+      ((HAA_agencylist[HAAagency].item('families').item('singles') == True and HAAchnpreg == False) or (HAA_agencylist[HAAagency].item('families').item('family') == True and HAAchnpreg == True ))):
+          HAAqualifyingagencies.append(HAAagency)
   
-  HAAqualifyingagencies.gathered = True
+    HAAqualifyingagencies.gathered = True
 ---
 # Metadata about the app.  This isn't displayed anywhere but is useful
 # as a record.
 #metadata:
 #  title: Homelessness Assistance Application
 #  authors:
-#   - name: Julianne Keefe
+#    - name: Julianne Keefe
 #    - name: Thomas Press
 #    - name: Nicholas Siemelink
 #  organisation:  Flinders University
@@ -60,48 +61,54 @@ mandatory: true
 question: Final Report
 subquestion:  |
 
-
-  % if HAApets:
-  ### Here is a suggested pet adoption agency
-  % endif
+  % if HAAeligible:
+    % if HAApets:
+  ###Safe Pets, Safe Families: Pet Service info
+    % endif
   
-  % if HAAabor:
+    % if HAAabor:
   ### Agencies servicing only Aboriginal people
-    % for HAAagency in HAAqualifyingagencies:
-      % if HAA_agencylist[HAAagency].item('indigenous') == True:
-        ${ HAAagency }
-      % endif
-    % endfor
-  % endif
+      % for HAAagency in HAAqualifyingagencies:
+        % if HAA_agencylist[HAAagency].item('indigenous') == True:
+          ${ HAAagency }
+        % endif
+      % endfor
+    % endif
   
   
-  % if HAAchnpreg:
+    % if HAAchnpreg:
   ### Agencies servicing only families
-    % for HAAagency in HAAqualifyingagencies:
-      % if (HAA_agencylist[HAAagency].item('families').item('singles') == False and HAA_agencylist[HAAagency].item('indigenous') == False):
-          ${ HAAagency }
-      % endif
-    % endfor
-  % endif
+      % for HAAagency in HAAqualifyingagencies:
+        % if (HAA_agencylist[HAAagency].item('families').item('singles') == False and HAA_agencylist[HAAagency].item('indigenous') == False):
+            ${ HAAagency }
+        % endif
+      % endfor
+    % endif
   
   
-  % if HAAchnpreg == False:
+    % if HAAchnpreg == False:
   ### Agencies servicing only singles
-    % for HAAagency in HAAqualifyingagencies:
-      % if (HAA_agencylist[HAAagency].item('families').item('family') == False and HAA_agencylist[HAAagency].item('indigenous') == False): 
-          ${ HAAagency }
-      % endif
-    % endfor
-  % endif
-  
+      % for HAAagency in HAAqualifyingagencies:
+        % if (HAA_agencylist[HAAagency].item('families').item('family') == False and HAA_agencylist[HAAagency].item('indigenous') == False): 
+            ${ HAAagency }
+        % endif
+      % endfor
+    % endif
+    
   
   ### All other Qualifying Agencies
-  % for HAAagency in HAAqualifyingagencies:
-    % if (HAA_agencylist[HAAagency].item('families').item('singles') == True and HAA_agencylist[HAAagency].item('families').item('family') == True and HAA_agencylist[HAAagency].item('indigenous') == False):
-        ${ HAAagency }
-    % endif
-  % endfor
-
+    % for HAAagency in HAAqualifyingagencies:
+      % if (HAA_agencylist[HAAagency].item('families').item('singles') == True and HAA_agencylist[HAAagency].item('families').item('family') == True and HAA_agencylist[HAAagency].item('indigenous') == False):
+          ${ HAAagency }
+      % endif
+    % endfor
+  
+  ### Community housing options
+  % endif
+  
+  % if HAAeligible == False:
+  ### The disclaimer has not been understood and accepted. Please restart and review the information.
+  % endif
 buttons:
   - Exit: exit
   - Restart: restart
