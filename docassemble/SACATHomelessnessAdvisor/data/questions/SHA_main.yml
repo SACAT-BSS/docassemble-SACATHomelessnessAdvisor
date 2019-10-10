@@ -63,14 +63,33 @@ subquestion:  |
 
   % if HAAeligible:
     % if HAApets:
-  ###Safe Pets, Safe Families: Pet Service info
+  The following emergency housing agencies will not accept pets, it is advised you contact Safe Pets Safe Families as soon as possible to discuss housing for your pet.  
+    
+  **Safe Pets, Safe Families**
+  
+  PO Box 427, Christies Beach, 5165
+  
+  safepetssafefamilies@gmail.com
+  
+  0409818879
+  
     % endif
+  
+  ### Agencies
+  
+  You may be eligible for the following agencies. We advise that you immediately make contact with them to attempt to arrange emergency housing.
   
     % if HAAabor:
   ### Agencies servicing only Aboriginal people
       % for HAAagency in HAAqualifyingagencies:
         % if HAA_agencylist[HAAagency].item('indigenous') == True:
-          ${ HAAagency }
+  **${ HAA_agencylist[HAAagency].item('service') }**  
+  ${ HAA_agencylist[HAAagency].item('address') }     
+  
+  ${ HAA_agencylist[HAAagency].item('email') }
+  
+  ${ HAA_agencylist[HAAagency].item('phone') }
+  
         % endif
       % endfor
     % endif
@@ -80,7 +99,13 @@ subquestion:  |
   ### Agencies servicing only families
       % for HAAagency in HAAqualifyingagencies:
         % if (HAA_agencylist[HAAagency].item('families').item('singles') == False and HAA_agencylist[HAAagency].item('indigenous') == False):
-            ${ HAAagency }
+  **${ HAA_agencylist[HAAagency].item('service') }**  
+  ${ HAA_agencylist[HAAagency].item('address') }     
+  
+  ${ HAA_agencylist[HAAagency].item('email') }
+  
+  ${ HAA_agencylist[HAAagency].item('phone') }
+  
         % endif
       % endfor
     % endif
@@ -90,7 +115,13 @@ subquestion:  |
   ### Agencies servicing only singles
       % for HAAagency in HAAqualifyingagencies:
         % if (HAA_agencylist[HAAagency].item('families').item('family') == False and HAA_agencylist[HAAagency].item('indigenous') == False): 
-            ${ HAAagency }
+  **${ HAA_agencylist[HAAagency].item('service') }**  
+  ${ HAA_agencylist[HAAagency].item('address') }     
+  
+  ${ HAA_agencylist[HAAagency].item('email') }
+  
+  ${ HAA_agencylist[HAAagency].item('phone') }
+  
         % endif
       % endfor
     % endif
@@ -99,11 +130,17 @@ subquestion:  |
   ### All other Qualifying Agencies
     % for HAAagency in HAAqualifyingagencies:
       % if (HAA_agencylist[HAAagency].item('families').item('singles') == True and HAA_agencylist[HAAagency].item('families').item('family') == True and HAA_agencylist[HAAagency].item('indigenous') == False):
-          ${ HAAagency }
+  **${ HAA_agencylist[HAAagency].item('service') }**  
+  ${ HAA_agencylist[HAAagency].item('address') }     
+  
+  ${ HAA_agencylist[HAAagency].item('email') }
+  
+  ${ HAA_agencylist[HAAagency].item('phone') }
+  
       % endif
     % endfor
   
-  ### Community housing options
+  # Community housing options
   % endif
   
   % if HAAeligible == False:
