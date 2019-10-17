@@ -13,6 +13,7 @@ include:
 objects:
   - endpoint: DADict
   - HAAqualifyingagencies: DAList
+  - HAAabor_list: DAList
 ---
 # Welcome screen should go here
 mandatory: True
@@ -34,6 +35,9 @@ buttons:
 code: |
   HAAqualifyingagencies.there_are_any = True
 ---
+code: |
+  HAAabor_list.there_are_any = True
+---
 mandatory: True
 code: |
   if HAAeligible == True:
@@ -45,6 +49,26 @@ code: |
           HAAqualifyingagencies.append(HAAagency)
   
     HAAqualifyingagencies.gathered = True
+---
+mandatory: true
+code: |
+  for HAA_agency in HAAqualifyingagencies:
+    if HAA_agencylist[HAA_agency].item('indigenous'):
+      HAAabor_list.append(HAA_agency)
+      HAA_agencylist[HAA_agency]['printed'] = True
+
+  HAAabor_list.gathered = True
+---
+# Families
+mandatory: True
+code: |
+  for HAA_agency in HAAqualifyingagencies:
+    if HAA_agencylist(HAA_agency).item('printed') == False:
+      if blabla bla
+        HAAfamiles_list.append(HAA_agency)
+        HAA_agencylist[HAA_agency]['printed'] = True
+        
+        
 ---
 # Metadata about the app.  This isn't displayed anywhere but is useful
 # as a record.
@@ -81,8 +105,7 @@ subquestion:  |
   
     % if HAAabor:
   ### Agencies servicing only Aboriginal people
-      % for HAAagency in HAAqualifyingagencies:
-        % if HAA_agencylist[HAAagency].item('indigenous') == True:
+      % for HAAagency in HAAabor_list:
   **${ HAA_agencylist[HAAagency].item('service') }**  
   ${ HAA_agencylist[HAAagency].item('address') }     
   
@@ -90,7 +113,6 @@ subquestion:  |
   
   ${ HAA_agencylist[HAAagency].item('phone') }
   
-        % endif
       % endfor
     % endif
   
@@ -149,5 +171,5 @@ subquestion:  |
 buttons:
   - Exit: exit
   - Restart: restart
-  
 ---
+      
