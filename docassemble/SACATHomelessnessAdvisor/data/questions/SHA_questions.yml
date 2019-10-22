@@ -13,12 +13,23 @@ question: |
 yesno: HAApets
 ---
 question: |
-  % if HAAgender == 'Male':
-  Do you have children?
-  % else:
-  Do you have children or are you pregnant?
-  % endif
-yesno: HAAchnpreg
+  Are you seeking accommodation on your own or with your family?
+fields: 
+  - no label: HAAfamily
+    datatype: radio
+    choices:
+     - Single
+     - Family
+---
+question: |
+  Do you live in the Adelaide Metropolitan Area?
+fields: 
+  - no label: HAAmetro
+    datatype: radio
+    choices:
+     - Yes
+     - No
+     - Not Sure
 ---
 question: |
   Are you Aboriginal?
@@ -29,6 +40,11 @@ question: |
 fields:
   Age: HAAage
   datatype: integer
+  min: 0
+  max: 100
+  validation messages: 
+    max: |
+      Please enter an age between 0 and 100
 ---
 question: |
   Do you have pets?

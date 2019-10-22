@@ -13,6 +13,9 @@ include:
 objects:
   - endpoint: DADict
   - HAAqualifyingagencies: DAList
+  - HAAabor_list: DAList
+  - HAAgender_list: DAList
+  - HAAfamily_list: DAList
 ---
 # Welcome screen should go here
 mandatory: True
@@ -20,11 +23,8 @@ question: Welcome!
 subquestion: |
   Welcome to our Homelessness Advisory Application. It is designed to assist in finding services which may be of assistance if you find yourself likely to be homeless. 
  
-
   ***Disclaimer:***   
   No guarantees are made that any individual service may accept your enquiry or provide services to you. It is a guide to selected services only and may not include all services provided.
-
-
   If you continue you accept these terms.
 field: HAAeligible
 buttons:
@@ -34,17 +34,58 @@ buttons:
 code: |
   HAAqualifyingagencies.there_are_any = True
 ---
+code: |
+  HAAabor_list.there_are_any = True
+---
+code: |
+  HAAgender_list.there_are_any = True
+---
+code: |
+  HAAfamily_list.there_are_any = True
+---
 mandatory: True
 code: |
   if HAAeligible == True:
     for HAAagency in HAA_agencylist.keys():
       if (HAA_agencylist[HAAagency].item('min_age') <= HAAage <= HAA_agencylist[HAAagency].item('max_age') and
       HAA_agencylist[HAAagency].item('gender').item(HAAgender) and
+      ((HAAmetro == 'Not Sure') or (HAAmetro == 'Yes' and HAA_agencylist[HAAagency].item('metro') == True) or (HAAmetro == 'No' and HAA_agencylist[HAAagency].item('metro') == False)) and
       (HAAabor == True or (HAAabor == False and HAA_agencylist[HAAagency].item('indigenous') == False)) and
-      ((HAA_agencylist[HAAagency].item('families').item('singles') == True and HAAchnpreg == False) or (HAA_agencylist[HAAagency].item('families').item('family') == True and HAAchnpreg == True ))):
+      ((HAA_agencylist[HAAagency].item('families').item('singles') == True and HAAfamily == 'Single') or (HAA_agencylist[HAAagency].item('families').item('family') == True and HAAfamily == 'Family' ))):
           HAAqualifyingagencies.append(HAAagency)
   
     HAAqualifyingagencies.gathered = True
+---
+mandatory: true
+code: |
+  for HAAagency in HAAqualifyingagencies:
+    HAA_agencylist[HAAagency]['printed'] = False
+---
+mandatory: true
+code: |
+  for HAAagency in HAAqualifyingagencies:
+    if HAA_agencylist[HAAagency].item('indigenous'):
+      HAAabor_list.append(HAAagency)
+      HAA_agencylist[HAAagency]['printed'] = True
+  HAAabor_list.gathered = True
+--- 
+mandatory: true
+code: |
+  for HAAagency in HAAqualifyingagencies:
+    if HAA_agencylist[HAAagency].item('printed') == False:
+      if (((HAA_agencylist[HAAagency].item('gender').item('male') == False) and (HAAgender == 'female')) or ((HAA_agencylist[HAAagency].item('gender').item('female') == False) and (HAAgender == 'male'))):
+        HAAgender_list.append(HAAagency)
+        HAA_agencylist[HAAagency]['printed'] = True
+  HAAgender_list.gathered = True
+---
+mandatory: True
+code: |
+  for HAAagency in HAAqualifyingagencies:
+    if HAA_agencylist[HAAagency].item('printed') == False:
+      if (((HAA_agencylist[HAAagency].item('families').item('singles') == False) and (HAAfamily == 'Family')) or ((HAA_agencylist[HAAagency].item('families').item('family') == False) and (HAAfamily == 'Single'))):
+        HAAfamily_list.append(HAAagency)
+        HAA_agencylist[HAAagency]['printed'] = True
+  HAAfamily_list.gathered = True   
 ---
 # Metadata about the app.  This isn't displayed anywhere but is useful
 # as a record.
@@ -60,17 +101,13 @@ code: |
 mandatory: true
 question: Final Report
 subquestion:  |
-
   % if HAAeligible:
     % if HAApets:
   The following emergency housing agencies will not accept pets, it is advised you contact Safe Pets Safe Families as soon as possible to discuss housing for your pet.  
     
-  **Safe Pets, Safe Families**
-  
-  PO Box 427, Christies Beach, 5165
-  
-  safepetssafefamilies@gmail.com
-  
+  **Safe Pets, Safe Families**  
+  PO Box 427, Christies Beach, 5165  
+  safepetssafefamilies@gmail.com  
   0409818879
   
     % endif
@@ -80,62 +117,41 @@ subquestion:  |
   You may be eligible for the following agencies. We advise that you immediately make contact with them to attempt to arrange emergency housing.
   
     % if HAAabor:
-  ### Agencies servicing only Aboriginal people
-      % for HAAagency in HAAqualifyingagencies:
-        % if HAA_agencylist[HAAagency].item('indigenous') == True:
+      % for HAAagency in HAAabor_list:
   **${ HAA_agencylist[HAAagency].item('service') }**  
-  ${ HAA_agencylist[HAAagency].item('address') }     
+  ${ HAA_agencylist[HAAagency].item('address') }       
+  ${ HAA_agencylist[HAAagency].item('email') }  
+  ${ HAA_agencylist[HAAagency].item('phone') }  
+  ${ HAA_agencylist[HAAagency].item('blurb') }  
   
-  ${ HAA_agencylist[HAAagency].item('email') }
-  
-  ${ HAA_agencylist[HAAagency].item('phone') }
-  
-        % endif
-      % endfor
-    % endif
-  
-  
-    % if HAAchnpreg:
-  ### Agencies servicing only families
-      % for HAAagency in HAAqualifyingagencies:
-        % if (HAA_agencylist[HAAagency].item('families').item('singles') == False and HAA_agencylist[HAAagency].item('indigenous') == False):
-  **${ HAA_agencylist[HAAagency].item('service') }**  
-  ${ HAA_agencylist[HAAagency].item('address') }     
-  
-  ${ HAA_agencylist[HAAagency].item('email') }
-  
-  ${ HAA_agencylist[HAAagency].item('phone') }
-  
-        % endif
-      % endfor
-    % endif
-  
-  
-    % if HAAchnpreg == False:
-  ### Agencies servicing only singles
-      % for HAAagency in HAAqualifyingagencies:
-        % if (HAA_agencylist[HAAagency].item('families').item('family') == False and HAA_agencylist[HAAagency].item('indigenous') == False): 
-  **${ HAA_agencylist[HAAagency].item('service') }**  
-  ${ HAA_agencylist[HAAagency].item('address') }     
-  
-  ${ HAA_agencylist[HAAagency].item('email') }
-  
-  ${ HAA_agencylist[HAAagency].item('phone') }
-  
-        % endif
       % endfor
     % endif
     
-  
-  ### All other Qualifying Agencies
-    % for HAAagency in HAAqualifyingagencies:
-      % if (HAA_agencylist[HAAagency].item('families').item('singles') == True and HAA_agencylist[HAAagency].item('families').item('family') == True and HAA_agencylist[HAAagency].item('indigenous') == False):
+      % for HAAagency in HAAgender_list:
   **${ HAA_agencylist[HAAagency].item('service') }**  
-  ${ HAA_agencylist[HAAagency].item('address') }     
+  ${ HAA_agencylist[HAAagency].item('address') }       
+  ${ HAA_agencylist[HAAagency].item('email') }  
+  ${ HAA_agencylist[HAAagency].item('phone') }  
+  ${ HAA_agencylist[HAAagency].item('blurb') }  
   
-  ${ HAA_agencylist[HAAagency].item('email') }
+      % endfor
   
-  ${ HAA_agencylist[HAAagency].item('phone') }
+      % for HAAagency in HAAfamily_list:       
+  **${ HAA_agencylist[HAAagency].item('service') }**  
+  ${ HAA_agencylist[HAAagency].item('address') }       
+  ${ HAA_agencylist[HAAagency].item('email') }  
+  ${ HAA_agencylist[HAAagency].item('phone') }  
+  ${ HAA_agencylist[HAAagency].item('blurb') }  
+  
+      % endfor
+  
+    % for HAAagency in HAAqualifyingagencies:
+      % if (HAA_agencylist[HAAagency].item('printed') == False):
+  **${ HAA_agencylist[HAAagency].item('service') }**  
+  ${ HAA_agencylist[HAAagency].item('address') }       
+  ${ HAA_agencylist[HAAagency].item('email') }  
+  ${ HAA_agencylist[HAAagency].item('phone') }  
+  ${ HAA_agencylist[HAAagency].item('blurb') }  
   
       % endif
     % endfor
@@ -149,5 +165,4 @@ subquestion:  |
 buttons:
   - Exit: exit
   - Restart: restart
-  
 ---
