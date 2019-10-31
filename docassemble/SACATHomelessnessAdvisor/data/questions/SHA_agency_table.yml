@@ -8,7 +8,7 @@ data:
     address: 43 Franklin Street, Adelaide, South Australia 5000
     email: acbrokerage@unitingcommunities.org
     phone: 8202 5060
-    website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/adolescent-community-care-options
+    website: https://www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/adolescent-community-care-options
     min_age: 16
     max_age: 20
     gender: 
@@ -116,7 +116,7 @@ data:
     address: 11-19 Miller Court, Adelaide, SA, 5000
     email: enquiries@baptisitcare.org.au
     phone: 8118 5200
-    website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/community-transition-worker-baptist-care
+    website: https://www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/community-transition-worker-baptist-care/
     min_age: 0
     max_age: 999
     gender: 
@@ -163,7 +163,7 @@ data:
       singles: true
       family: true
     metro: true
-    blurb: Services aboriginal adults and families in the Eastern Suburbs.
+    blurb: Services Aboriginal adults and families in the Eastern Suburbs.
   AG010:
     service: Eastern Adelaide Generic Homelessness Service
     service_provider: Hutt Street Centre in partnership with Red Cross
@@ -182,24 +182,6 @@ data:
       family: false
     metro: true
     blurb: Services adults in the Eastern Suburbs who are homeless or at risk of homelessness.
-  AG011: 
-    service: Ex Custodial Homelessness Support Services and Integrated Housing Exits Program
-    service_provider: Offenders Aid and Rehabilitation Services of South Australia
-    address: 320 Port Road, Hindmarsh, SA, 5007
-    email: oars@communitytransitions.com.au
-    phone: 8218 0700
-    website: https://www.oars.org.au/services-early-intervention/reintegration-services/
-    min_age: 10
-    max_age: 999
-    gender: 
-      male: true
-      female: true
-    indigenous: false
-    families:
-      singles: true
-      family: false
-    metro: true
-    blurb: For adults who have been released from custody and are facing homelessness.
   AG012: 
     service: Fleurieu and Kangaroo Island Homelessness Support Service
     service_provider: Junction Australia
@@ -440,7 +422,7 @@ data:
     address: 26 Second Street, Nuriootpa, SA, 5355
     email: nuriootpa@centacare.org.au
     phone: 8303 6625
-    website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/outer-north-youth-homelessness-service
+    website: https://www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/outer-north-youth-homelessness-service
     min_age: 15
     max_age: 25
     gender: 
@@ -674,7 +656,7 @@ data:
     address: 21 Goode Road, Ceduna, SA, 5690
     email: donna.ware@dfc.sa.gov.au
     phone: 8625 3522
-    website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/wangka-wilurrara-transitional-accommodation-centre
+    website: https://www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/wangka-wilurrara-transitional-accommodation-centre
     min_age: 0
     max_age: 999
     gender: 
@@ -689,7 +671,7 @@ data:
   AG039: 
     service: Western Aboriginal Homelessness Service
     service_provider: Aboriginal Sobriety Group Inc
-    address: Not Listed
+    address: Western Suburbs
     email: waahs@asg.org.au
     phone: 8243 1698
     website: http://asg.org.au/homelessness/
@@ -890,7 +872,7 @@ data:
     address: 134 Waymouth Street, Adelaide, SA, 5000
     email: afss@afss.com.au
     phone: 8205 1500
-    website: www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/youth-accommodation-aboriginal-specific-homelessness-services
+    website: https://www.sa.gov.au/topics/housing/emergency-shelter-and-homelessness/homelessness-service-providers/youth-accommodation-aboriginal-specific-homelessness-services
     min_age: 15
     max_age: 25
     gender: 
@@ -919,23 +901,5 @@ data:
       singles: true
       family: false
     metro: true
-    blurb: Services young people aged 15-25 years who are homeless or at risk of homelessness.
-  AG052:
-    service: Youth Justice Program (for those who have completed a custodial sentence or period of remand)
-    service_provider: Service to Youth Council Inc
-    address: 135 - 139 Currie Street, Adelaide, SA, 5000
-    email: hypaadmin@syc.net.au
-    phone: 8405 8540
-    website: https://www.syc.net.au/justice/
-    min_age: 16
-    max_age: 25
-    gender: 
-      male: true
-      female: true
-    indigenous: false
-    families:
-      singles: true
-      family: false
-    metro: true
-    blurb: Services young people above the age of 16 who have been released from custody.
+    blurb: Services young people aged 17-25 years who are homeless or at risk of homelessness.
 ---

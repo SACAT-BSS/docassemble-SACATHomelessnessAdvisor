@@ -1,8 +1,4 @@
-# docassemble.SACATHomelessnessAdvisor
+#SACAT Homelessness Advisory App
 
-TBC
-
-## Author
-
-Mark Ferraretto, mark.ferraretto@flinders.edu.au
-
+The SACAT Homelessness Advisory App was created by Thomas Press, Julianne Keefe and Nicholas Siemelink for use by Sacat.
+It provides assistance for people who have received vacant possession orders from SACAT and are facing homelessness.
