@@ -1,36 +1,57 @@
 ---
+prevent going back: True
 question: |
   What is your gender?
 fields: 
   - no label: HAAgender
     datatype: radio
     choices:
-     - female
-     - male
+     - "Female": female
+     - "Male": male
 ---
+prevent going back: True
 question: |
   Do you have pets?
 yesno: HAApets
 ---
+prevent going back: True
 question: |
-  % if HAAgender == 'Male':
-  Do you have children?
-  % else:
-  Do you have children or are you pregnant?
-  % endif
-yesno: HAAchnpreg
+  Are you seeking accommodation on your own or with your family?
+fields: 
+  - no label: HAAfamily
+    datatype: radio
+    choices:
+     - "I am seeking accommodation on my own": Single
+     - "I am seeking accommodation with my family, or I am pregnant": Family
 ---
+prevent going back: True
+question: |
+  Do you live in the Adelaide Metropolitan Area?
+yesnomaybe: HAAmetro
+
+subquestion:
+  Below is a map of the Adelaide Metropolitan Area
+
+  [FILE Metro_Map.jpg, 400px]
+  
+  
+  Do you live in one of these areas?
+---
+prevent going back: True
 question: |
   Are you Aboriginal?
 yesno: HAAabor
 ---
+prevent going back: True
 question: |
   What is your age?
 fields:
   Age: HAAage
+  default: 25
   datatype: integer
----
-question: |
-  Do you have pets?
-yesno: HAApets
+  min: 0
+  max: 100
+  validation messages: 
+    max: |
+      Please enter an age between 0 and 100
 ---
