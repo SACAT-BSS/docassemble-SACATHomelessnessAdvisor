@@ -45,7 +45,7 @@ def find_package_data(where='.', package='', exclude=standard_exclude, exclude_d
 setup(name='docassemble.SACATHomelessnessAdvisor',
       version='0.0.1',
       description=('TBC'),
-      long_description='#SACAT Homelessness Advisory App\r\n\r\nThe SACAT Homelessness Advisory App was created by Thomas Press, Julianne Keefe and Nicholas Siemelink for use by Sacat.\r\nIt provides assistance for people who have received vacant possession orders from SACAT and are facing homelessness.',
+      long_description='# SACAT Homelessness Advisory App\r\n\r\nThe SACAT Homelessness Advisory App was created by Thomas Press, Julianne Keefe and Nicholas Siemelink for use by Sacat.\r\nIt provides assistance for people who have received vacant possession orders from SACAT and are facing homelessness.\r\n',
       long_description_content_type='text/markdown',
       author='TBC',
       author_email='TBC',
