@@ -39,7 +39,7 @@ subquestion:
 ---
 prevent going back: True
 question: |
-  Are you Aboriginal?
+  Are you an Aboriginal person?
 yesno: HAAabor
 ---
 prevent going back: True
@@ -47,7 +47,6 @@ question: |
   What is your age?
 fields:
   Age: HAAage
-  default: 25
   datatype: integer
   min: 0
   max: 100
