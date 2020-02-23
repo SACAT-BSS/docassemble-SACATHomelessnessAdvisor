@@ -39,7 +39,7 @@ subquestion:
 ---
 prevent going back: True
 question: |
-  Are you an Aboriginal person?
+  Are you of Aboriginal and or Torres Strait Islander origins?
 yesno: HAAabor
 ---
 prevent going back: True
