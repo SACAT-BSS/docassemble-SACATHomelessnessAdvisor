@@ -1,13 +1,18 @@
 ---
 prevent going back: True
 question: |
-  What is your gender?
+  Do you identify as:
 fields: 
   - no label: HAAgender
     datatype: radio
     choices:
      - "Female": female
      - "Male": male
+     - "Other": other
+  - Specify: HAAgenderother
+    show if:
+      variable: HAAgender
+      is: other
 ---
 prevent going back: True
 question: |
@@ -39,7 +44,7 @@ subquestion:
 ---
 prevent going back: True
 question: |
-  Are you of Aboriginal and or Torres Strait Islander origins?
+  Do you identify as Aboriginal or Torres Strait Islander?
 yesno: HAAabor
 ---
 prevent going back: True
