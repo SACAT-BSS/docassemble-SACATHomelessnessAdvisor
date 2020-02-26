@@ -22,6 +22,7 @@ objects:
   - HAAabor_list: DAList
   - HAAgender_list: DAList
   - HAAfamily_list: DAList
+  - HAAother_list: DAList
   - SACATlogo: DAStaticFile.using(filename='SACAT.png')
 ---
 features:
@@ -76,6 +77,9 @@ code: |
 code: |
   HAAfamily_list.there_are_any = True
 ---
+code: |
+  HAAother_list.there_are_any = True
+---
 attachment: 
   - name: SACAT Homelessness Advisory App
     filename: Result Printout
@@ -90,7 +94,7 @@ code: |
   if HAAeligible == True:
     for HAAagency in HAA_agencylist.keys():
       if (HAA_agencylist[HAAagency].item('min_age') <= HAAage <= HAA_agencylist[HAAagency].item('max_age') and
-      HAA_agencylist[HAAagency].item('gender').item(HAAgender) and
+      ((HAA_agencylist[HAAagency].item('gender').item(HAAgender)) or (HAAgender == 'other')) and
       ((HAAmetro == None) or (HAAmetro == True and HAA_agencylist[HAAagency].item('metro') == True) or (HAAmetro == False and HAA_agencylist[HAAagency].item('metro') == False)) and
       (HAAabor == True or (HAAabor == False and HAA_agencylist[HAAagency].item('indigenous') == False)) and
       ((HAA_agencylist[HAAagency].item('families').item('singles') == True and HAAfamily == 'Single') or (HAA_agencylist[HAAagency].item('families').item('family') == True and HAAfamily == 'Family' ))):
@@ -103,6 +107,15 @@ code: |
   if HAAeligible == True:
     for HAAagency in HAAqualifyingagencies:
       HAA_agencylist[HAAagency]['printed'] = False
+---
+mandatory: true
+code: |
+  if HAAeligible == True:
+    for HAAagency in HAAqualifyingagencies:
+      if (((HAA_agencylist[HAAagency].item('gender').item('male') == False) or (HAA_agencylist[HAAagency].item('gender').item('female') == False)) and (HAAgender == 'other')):
+        HAAother_list.append(HAAagency)
+        HAA_agencylist[HAAagency]['printed'] = True
+      HAAother_list.gathered = True
 ---
 mandatory: true
 code: |
@@ -139,7 +152,9 @@ question: ""
 subquestion:  |
   % if HAAeligible:
     % if HAApets:
-  The following emergency housing agencies will not accept pets. 
+  ### <u>Services for Pets</u>
+  
+  The agencies listed will not accept pets.
   
   We advise that you contact Safe Pets Safe Families as soon as possible to discuss alternative care options for your pet.  
     
@@ -150,7 +165,13 @@ subquestion:  |
   
     % endif
   
-  ### <u>List of Agencies</u>
+    % if HAAfamily == 'Single':
+  ### <u>Services for you</u>
+    % endif
+    
+    % if HAAfamily == 'Family':
+  ### <u>Services for You and Your Family</u>
+    % endif
   
   You may be eligible for the following agencies. We advise that you immediately make contact with them to attempt to arrange emergency housing.
   
@@ -193,8 +214,24 @@ subquestion:  |
   
       % endif
     % endfor
+    
+    % if HAAgender == 'other':
+    
+  ### <u>Gender Targeted Agencies</u>
   
-  **Community Housing**
+  The following agencies are targeted towards a particular gender. We recommend contacting agencies to determine your eligibility.
+    
+      % for HAAagency in HAAother_list:       
+  **[${ HAA_agencylist[HAAagency].item('service') }]( ${ HAA_agencylist[HAAagency].item('website') })**  
+  ${ HAA_agencylist[HAAagency].item('address') }       
+  ${ HAA_agencylist[HAAagency].item('email') }  
+  ${ HAA_agencylist[HAAagency].item('phone') }  
+  ${ HAA_agencylist[HAAagency].item('blurb') }  
+  
+      % endfor
+    % endif
+  
+  ### <u>Community Housing</u>
   
   Further information on long term accommodation may be found at
   [https://www.sa.gov.au/topics/housing/public-and-community-housing/list-of-housing-associations](https://www.sa.gov.au/topics/housing/public-and-community-housing/list-of-housing-associations)
