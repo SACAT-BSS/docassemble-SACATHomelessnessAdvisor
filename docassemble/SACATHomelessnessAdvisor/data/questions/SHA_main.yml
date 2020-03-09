@@ -215,7 +215,7 @@ subquestion:  |
       % endif
     % endfor
     
-    % if HAAgender == 'other':
+    % if HAAother_list:
     
   ### <u>Gender Targeted Agencies</u>
   

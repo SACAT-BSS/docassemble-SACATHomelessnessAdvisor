@@ -8,11 +8,7 @@ fields:
     choices:
      - "Female": female
      - "Male": male
-     - "Other": other
-  - Specify: HAAgenderother
-    show if:
-      variable: HAAgender
-      is: other
+     - "Other/Prefer not to Specify": other
 ---
 prevent going back: True
 question: |
@@ -34,13 +30,10 @@ question: |
   Do you live in the Adelaide Metropolitan Area?
 yesnomaybe: HAAmetro
 
-subquestion:
-  Below is a map of the Adelaide Metropolitan Area
+under: |
+    Below is a map of the Adelaide Metropolitan Area
 
-  [FILE Metro_Map.jpg, 400px]
-  
-  
-  Do you live in one of these areas?
+    [FILE Metro_Map.jpg, 400px]
 ---
 prevent going back: True
 question: |
