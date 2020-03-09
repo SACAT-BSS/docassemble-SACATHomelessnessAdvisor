@@ -1,5 +1,4 @@
 ---
-prevent going back: True
 question: |
   Do you identify as:
 fields: 
@@ -10,12 +9,10 @@ fields:
      - "Male": male
      - "Other/Prefer not to Specify": other
 ---
-prevent going back: True
 question: |
   Do you have pets?
 yesno: HAApets
 ---
-prevent going back: True
 question: |
   Are you seeking accommodation on your own or with your family?
 fields: 
@@ -25,7 +22,6 @@ fields:
      - "I am seeking accommodation on my own": Single
      - "I am seeking accommodation with my family, or I am pregnant": Family
 ---
-prevent going back: True
 question: |
   Do you live in the Adelaide Metropolitan Area?
 yesnomaybe: HAAmetro
@@ -35,12 +31,10 @@ under: |
 
     [FILE Metro_Map.jpg, 400px]
 ---
-prevent going back: True
 question: |
   Do you identify as Aboriginal or Torres Strait Islander?
 yesno: HAAabor
 ---
-prevent going back: True
 question: |
   What is your age?
 fields:
