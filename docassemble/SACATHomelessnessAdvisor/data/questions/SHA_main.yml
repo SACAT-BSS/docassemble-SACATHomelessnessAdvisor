@@ -80,7 +80,7 @@ subquestion: |
   Welcome to the SACAT Homelessness Advisor. This application is designed to help you find services that may assist you if you are facing homelessness.
  
   ***Disclaimer:***   
-  No guarantees are made that any individual service will accept your enquiry or provide services to you. It is a guide to selected services only and may not include all services.
+  This is a guide to selected services only and may not include all services. There are no guarantees that any individual service will accept your enquiry or provide services to you.
   
   Do you accept these terms?
 yesno: HAAeligible
