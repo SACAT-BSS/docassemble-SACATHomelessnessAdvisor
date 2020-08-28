@@ -185,7 +185,7 @@ subquestion:  |
     % endif
   
     % if HAAfamily == 'Single':
-  ### <u>Services for you</u>
+  ### Services for you
     % endif
     
     % if HAAfamily == 'Family':
