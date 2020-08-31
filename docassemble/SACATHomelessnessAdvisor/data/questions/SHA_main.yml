@@ -192,7 +192,7 @@ subquestion:  |
   ### <u>Services for You and Your Family</u>
     % endif
   
-  You may be eligible for the following agencies. We advise that you immediately make contact with them to attempt to arrange emergency housing.
+  Based on your answers, you might be eligible for support from the following agencies. You should contact them as soon as you can to try and arrange emergency housing.
   
     % if HAAabor:
       % for HAAagency in HAAabor_list:
