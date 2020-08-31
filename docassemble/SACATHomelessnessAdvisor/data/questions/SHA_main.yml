@@ -238,7 +238,7 @@ subquestion:  |
     
   ### Gender Targeted Agencies
   
-  The following agencies are targeted towards a particular gender. We recommend contacting agencies to determine your eligibility.
+  The following agencies are targeted towards a particular gender. We recommend contacting them directly to find out if you are eligible.
     
       % for HAAagency in HAAother_list:       
   **[${ HAA_agencylist[HAAagency].item('service') }]( ${ HAA_agencylist[HAAagency].item('website') })**  
