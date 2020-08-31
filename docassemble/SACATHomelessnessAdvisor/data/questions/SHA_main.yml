@@ -189,7 +189,7 @@ subquestion:  |
     % endif
     
     % if HAAfamily == 'Family':
-  ### <u>Services for You and Your Family</u>
+  ### Services for You and Your Family
     % endif
   
   Based on your answers, you might be eligible for support from the following agencies. You should contact them as soon as you can to try and arrange emergency housing.
