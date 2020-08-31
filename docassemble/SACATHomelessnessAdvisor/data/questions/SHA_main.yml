@@ -252,8 +252,8 @@ subquestion:  |
   
   ### Community Housing
   
-  Further information on long term accommodation can be found on the SA.GOV.AU website
-  [https://www.sa.gov.au/topics/housing/public-and-community-housing/list-of-housing-associations](https://www.sa.gov.au/topics/housing/public-and-community-housing/list-of-housing-associations)
+  Further information on long term accommodation can be found on the
+  [SA.GOV.AU website](https://www.sa.gov.au/topics/housing/public-and-community-housing/list-of-housing-associations)
   % endif
   
   % if HAAeligible == False:
