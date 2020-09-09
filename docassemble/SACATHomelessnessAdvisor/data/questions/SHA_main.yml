@@ -77,10 +77,13 @@ code: |
 mandatory: True
 question: ""
 subquestion: |
-  Welcome to the SACAT Homelessness Advisor. This application is designed to help you find services that may assist you if you are facing homelessness.
+  Welcome to the SACAT Homelessness Advisor. This application is designed
+  to help you find services that may assist you if you are facing homelessness.
  
   ***Disclaimer:***   
-  No guarantees are made that any individual service will accept your enquiry or provide services to you. It is a guide to selected services only and may not include all services.
+  This is a guide to selected service only and may not include all services.
+  There are no guarantees that any individual service will accept you enquiry
+  or provide services to you.
   
   Do you accept these terms?
 yesno: HAAeligible
@@ -104,8 +107,8 @@ attachment:
   - name: SACAT Homelessness Advisory App
     filename: Result Printout
     valid formats:
-      - docx
       - pdf
+      - docx
     docx template file: HAA_print_out.docx
     variable name: HAAprintout
 ---
@@ -171,11 +174,12 @@ question: ""
 subquestion:  |
   % if HAAeligible:
     % if HAApets:
-  ### <u>Services for Pets</u>
+  ### Services for Pets
   
   The agencies listed will not accept pets.
   
-  We advise that you contact Safe Pets Safe Families as soon as possible to discuss alternative care options for your pet.  
+  You can contact Safe Pets Safe Families to discuss alternative 
+  care options for your pet.
     
   **[Safe Pets, Safe Families]( https://safepetssafefamilies.org.au/)**  
   PO Box 427, Christies Beach, 5165  
@@ -185,14 +189,16 @@ subquestion:  |
     % endif
   
     % if HAAfamily == 'Single':
-  ### <u>Services for you</u>
+  ### Services for you
     % endif
     
     % if HAAfamily == 'Family':
-  ### <u>Services for You and Your Family</u>
+  ### Services for You and Your Family
     % endif
   
-  You may be eligible for the following agencies. We advise that you immediately make contact with them to attempt to arrange emergency housing.
+  Based on your answer, you might be eligible for support from the following agencies.
+
+  You should contact them as soon as you can to try an arrange emergency housing.
   
     % if HAAabor:
       % for HAAagency in HAAabor_list:
@@ -236,9 +242,10 @@ subquestion:  |
     
     % if HAAother_list:
     
-  ### <u>Gender Targeted Agencies</u>
+  ### Gender Targeted Agencies
   
-  The following agencies are targeted towards a particular gender. We recommend contacting agencies to determine your eligibility.
+  The following agencies are targeted towards a particular gender. We recommend
+  contacting them directly to find out if you are eligible.
     
       % for HAAagency in HAAother_list:       
   **[${ HAA_agencylist[HAAagency].item('service') }]( ${ HAA_agencylist[HAAagency].item('website') })**  
@@ -250,10 +257,10 @@ subquestion:  |
       % endfor
     % endif
   
-  ### <u>Community Housing</u>
+  ### Community Housing
   
-  Further information on long term accommodation may be found at
-  [https://www.sa.gov.au/topics/housing/public-and-community-housing/list-of-housing-associations](https://www.sa.gov.au/topics/housing/public-and-community-housing/list-of-housing-associations)
+  Further information on long term accommodation can be found 
+  on the [SA.GOV.AU website](https://www.sa.gov.au/topics/housing/public-and-community-housing/list-of-housing-associations).
   % endif
   
   % if HAAeligible == False:
